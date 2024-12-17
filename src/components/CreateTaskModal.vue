@@ -117,7 +117,7 @@
 <script setup>
 import { useTaskStore } from "@/stores/store.js";
 import { ref, computed } from "vue";
-import Button from "@/components/Button.vue";
+import Button from "@/components/button.vue";
 
 const emit = defineEmits(["close", "task-created"]);
 
