@@ -52,6 +52,10 @@ Para compilar e minificar o projeto para produção:
    npm run build
    ```
 
+## você pode criar um usuario para testar a aplicação ou pode utilizar o seguinte usuario
+ "username": "admin",
+  "password": "1234"
+
 
 
 
