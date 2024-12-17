@@ -9,10 +9,24 @@
       class="bg-primary text-white p-4 rounded-xl shadow hover:shadow-lg hover:scale-105 transform transition duration-300 ease-in-out"
     >
       <h2 class="text-lg font-bold">{{ task.title }}</h2>
-      <p class="text-sm">{{ task.description }}</p>
-      <p class="text-sm">Categoria: {{ task.category }}</p>
-      <p class="text-sm">Prioridade: {{ task.priority }}</p>
-      <p class="text-sm">Data de Conclusão: {{ task.dueDate }}</p>
+      
+      <!-- Descrição com Tooltip -->
+      <p
+        class="text-sm truncate overflow-hidden max-w-full cursor-pointer"
+        :title="task.description"
+      >
+        <strong>{{ task.description }}</strong>
+      </p>
+
+      <p class="text-sm">
+        Categoria: <strong>{{ task.category }}</strong>
+      </p>
+      <p class="text-sm">
+        Prioridade: <strong>{{ task.priority }}</strong>
+      </p>
+      <p class="text-sm">
+        Data de Conclusão: <strong>{{ task.dueDate }}</strong>
+      </p>
 
       <!-- Botões -->
       <div class="flex gap-2 mt-4">

@@ -94,7 +94,6 @@ const filteredTasks = computed(() => {
 
     return matchesCategory && matchesPriority;
   });
-  console.log("Tarefas filtradas:", filtered);
   return filtered;
 });
 

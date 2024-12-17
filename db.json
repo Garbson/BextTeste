@@ -1,12 +1,12 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "username": "admin",
       "password": "1234"
     },
     {
-      "id": 2,
+      "id": "2",
       "username": "user",
       "password": "abcd"
     },
@@ -24,11 +24,21 @@
       "id": "1bce",
       "username": "admin26",
       "password": "1234"
+    },
+    {
+      "id": "77c6",
+      "username": "teste",
+      "password": "1234"
+    },
+    {
+      "id": "5505",
+      "username": "arnon",
+      "password": "1234"
     }
   ],
   "tasks": [
     {
-      "id": 1,
+      "id": "1",
       "title": "Exemplo de Tarefa",
       "description": "Descrição da tarefa",
       "priority": "Alta",
@@ -58,27 +68,9 @@
       "id": "1cb8",
       "title": "testando now ",
       "description": "saude",
-      "category": "saude",
-      "priority": "Média",
-      "dueDate": "2024-12-25",
-      "userId": "e61b"
-    },
-    {
-      "id": "7ce9",
-      "title": "teste ",
-      "description": "",
-      "category": "",
-      "priority": "Baixa",
-      "dueDate": "",
-      "userId": "e61b"
-    },
-    {
-      "id": "1048",
-      "title": "teste ",
-      "description": "",
-      "category": "",
-      "priority": "Baixa",
-      "dueDate": "",
+      "category": "gamer",
+      "priority": "Alta",
+      "dueDate": "2024-12-26",
       "userId": "e61b"
     },
     {
@@ -98,6 +90,15 @@
       "priority": "Baixa",
       "dueDate": "2024-12-28",
       "userId": 1
+    },
+    {
+      "id": "4b61",
+      "title": "teste ",
+      "description": "saddasdasdsadsadsadsadsadhsadsahkdkjsaldjlijsailjdljasiljdljaslkjdlsajildjilasjildjlisajldjlsajldkjlsajdljsaldljasljdlsaldj",
+      "category": "saude",
+      "priority": "Média",
+      "dueDate": "2024-12-25",
+      "userId": "e61b"
     }
   ]
 }

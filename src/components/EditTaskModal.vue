@@ -15,7 +15,7 @@
       <form @submit.prevent="handleEditTask">
         <!-- Campo Título -->
         <div class="mb-4 relative">
-          <label for="title" class="block text-sm font-semibold">Título</label>
+          <label for="title" class="block text-sm font-semibold">Título*</label>
           <input
             type="text"
             id="title"
@@ -48,7 +48,7 @@
         <!-- Campo Categoria -->
         <div class="mb-4 relative">
           <label for="category" class="block text-sm font-semibold"
-            >Categoria</label
+            >Categoria*</label
           >
           <input
             type="text"
@@ -66,7 +66,7 @@
         <!-- Campo Prioridade -->
         <div class="mb-4 relative">
           <label for="priority" class="block text-sm font-semibold"
-            >Prioridade</label
+            >Prioridade*</label
           >
           <select
             id="priority"
@@ -85,7 +85,7 @@
         <!-- Campo Data -->
         <div class="mb-4 relative">
           <label for="dueDate" class="block text-sm font-semibold"
-            >Data de Conclusão</label
+            >Data de Conclusão*</label
           >
           <input
             type="date"
@@ -102,7 +102,7 @@
         <!-- Botões -->
         <div class="flex gap-4 mt-6">
           <!-- Botão Salvar -->
-          <Button :icon="CheckIcon" variant="primary" type="submit" fullWidth>
+          <Button :icon="CheckIcon" :disabled="!isFormValid" variant="primary" type="submit" fullWidth>
             Salvar
           </Button>
 
@@ -124,7 +124,7 @@
 <script setup>
 import { useTaskStore } from "@/stores/store.js";
 import Button from "@/components/button.vue"; 
-import { ref, watch } from "vue";
+import { ref, watch, computed } from "vue";
 
 // Importação dos Heroicons
 import {
@@ -165,6 +165,11 @@ const handleEditTask = async () => {
   emit("task-updated"); // Emite evento para atualizar o dashboard
   emit("close"); // Fecha o modal
 };
+
+// Computed Property para verificar se os campos obrigatórios estão preenchidos
+const isFormValid = computed(() => {
+  return task.value.title && task.value.category && task.value.priority && task.value.dueDate;
+});
 </script>
 
 <style scoped>

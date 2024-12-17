@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-wrap items-center gap-4">
     <!-- Filtro Categoria -->
-    <div class="relative w-full  md:w-auto">
+    <div class="relative w-full sm:max-w-xs md:w-auto">
       <select
         :value="selectedCategory"
         @change="$emit('update:selectedCategory', $event.target.value)"
@@ -13,11 +13,13 @@
         </option>
       </select>
       <TagIcon class="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-primary" />
-      <ChevronDownIcon class="absolute right-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-primary" />
+      <ChevronDownIcon
+        class="absolute right-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-primary"
+      />
     </div>
 
     <!-- Filtro Prioridade -->
-    <div class="relative w-full sm:w-1/2 md:w-auto">
+    <div class="relative w-full sm:max-w-xs md:w-auto">
       <select
         :value="selectedPriority"
         @change="$emit('update:selectedPriority', $event.target.value)"

@@ -2,7 +2,7 @@
   <div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
     <!-- Card -->
     <div
-      class="bg-gradient-to-br from-primary to-blue-600 text-white p-8 md:w-full w-[90%] rounded-xl shadow-lg  max-w-lg"
+      class="bg-gradient-to-br from-primary to-blue-600 text-white p-8 md:w-full w-[90%] rounded-xl shadow-lg max-w-lg"
     >
       <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">
         <PlusIcon class="h-6 w-6 text-secondary" />
@@ -13,7 +13,7 @@
       <form @submit.prevent="handleCreateTask">
         <!-- Campo Título -->
         <div class="mb-4 relative">
-          <label for="title" class="block text-sm font-semibold">Título</label>
+          <label for="title" class="block text-sm font-semibold">Título *</label>
           <input
             type="text"
             id="title"
@@ -37,13 +37,13 @@
             class="w-full px-4 py-2 rounded-xl border-0 text-black focus:outline-none focus:ring-2 focus:ring-blue-300 pl-10"
           ></textarea>
           <DocumentTextIcon
-            class="absolute left-3 top-10 transform -translate-y-1/2 h-6 w-6 text-primary mr-5"
+            class="absolute left-3 top-10 transform -translate-y-1/2 h-6 w-6 text-primary"
           />
         </div>
 
         <!-- Campo Categoria -->
         <div class="mb-4 relative">
-          <label for="category" class="block text-sm font-semibold">Categoria</label>
+          <label for="category" class="block text-sm font-semibold">Categoria *</label>
           <input
             type="text"
             id="category"
@@ -52,12 +52,14 @@
             class="w-full px-4 py-2 rounded-xl border-0 text-black focus:outline-none focus:ring-2 focus:ring-blue-300 pl-10"
             required
           />
-          <TagIcon class="absolute left-3 top-10 transform -translate-y-1/2 h-6 w-6 text-primary" />
+          <TagIcon
+            class="absolute left-3 top-10 transform -translate-y-1/2 h-6 w-6 text-primary"
+          />
         </div>
 
         <!-- Campo Prioridade -->
         <div class="mb-4 relative">
-          <label for="priority" class="block text-sm font-semibold">Prioridade</label>
+          <label for="priority" class="block text-sm font-semibold">Prioridade *</label>
           <select
             id="priority"
             v-model="task.priority"
@@ -74,7 +76,7 @@
 
         <!-- Campo Data -->
         <div class="mb-4 relative">
-          <label for="dueDate" class="block text-sm font-semibold">Data de Conclusão</label>
+          <label for="dueDate" class="block text-sm font-semibold">Data de Conclusão *</label>
           <input
             type="date"
             id="dueDate"
@@ -93,7 +95,8 @@
             :icon="CheckIcon"
             variant="primary"
             fullWidth
-            @click="handleCreateTask"
+            type="submit"
+            :disabled="!isFormValid"
           >
             Criar
           </Button>
@@ -113,8 +116,10 @@
 
 <script setup>
 import { useTaskStore } from "@/stores/store.js";
-import { ref } from "vue";
-import Button from "@/components/button.vue";
+import { ref, computed } from "vue";
+import Button from "@/components/Button.vue";
+
+const emit = defineEmits(["close", "task-created"]);
 
 // Importação dos Heroicons
 import {
@@ -128,9 +133,6 @@ import {
   XMarkIcon,
 } from "@heroicons/vue/24/solid";
 
-// Define os eventos emitidos
-const emit = defineEmits(["close", "task-created"]);
-
 const taskStore = useTaskStore();
 const task = ref({
   title: "",
@@ -140,18 +142,18 @@ const task = ref({
   dueDate: "",
 });
 
+// Computed Property para verificar se os campos obrigatórios estão preenchidos
+const isFormValid = computed(() => {
+  return task.value.title && task.value.category && task.value.dueDate && task.value.priority;
+});
+
 const handleCreateTask = async () => {
   try {
-    await taskStore.addTask(task.value); // Função para adicionar a tarefa
-    emit("task-created"); // Emite o evento para atualizar o dashboard
+    await taskStore.addTask(task.value); // Adiciona a tarefa
+    emit("task-created"); // Emite evento para atualizar o dashboard
     emit("close"); // Fecha o modal
   } catch (error) {
     console.error("Erro ao criar tarefa:", error);
   }
 };
 </script>
-
-
-<style scoped>
-/* Estilização opcional adicional */
-</style>

@@ -4,7 +4,7 @@ import { defineStore } from "pinia";
 export const useTaskStore = defineStore("taskStore", {
   state: () => ({
     tasks: [],
-    user: JSON.parse(localStorage.getItem("user")) || null, // Recupera usuário salvo no localStorage
+    user: JSON.parse(localStorage.getItem("user")) || null, 
   }),
 
   actions: {
@@ -40,7 +40,7 @@ export const useTaskStore = defineStore("taskStore", {
         });
 
         if (existingUserResponse.data.length > 0) {
-          return { success: false, message: "Usuário já cadastrado." };
+          return { success: false, message: "Esse nome já está sendo utilizado" };
         }
 
         // Se o usuário não existir, cria um novo
