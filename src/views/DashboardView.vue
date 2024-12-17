@@ -60,7 +60,7 @@ import CreateTaskModal from "@/components/CreateTaskModal.vue";
 import EditTaskModal from "@/components/EditTaskModal.vue";
 import DeleteTaskModal from "@/components/DeleteTaskModal.vue";
 import TaskFilters from "@/components/TaskFilters.vue";
-import Button from "@/components/Button.vue";
+import Button from "@/components/button.vue";
 
 import { ref, computed, onMounted } from "vue";
 import { useTaskStore } from "@/stores/store.js";
