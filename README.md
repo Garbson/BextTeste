@@ -66,3 +66,5 @@ Para compilar e minificar o projeto para produção:
 - **Mock API**: Simulação de uma API usando `json-server`.
 
 **Bom desenvolvimento! 🚀**
+
+## Me senti bem empolgado, gostei muito do desafio.
