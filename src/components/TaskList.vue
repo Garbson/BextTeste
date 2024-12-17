@@ -39,7 +39,7 @@
 </template>
 
 <script setup>
-import Button from "@/components/Button.vue";
+import Button from "@/components/button.vue";
 import { PencilIcon, TrashIcon } from "@heroicons/vue/24/solid";
 
 defineProps({

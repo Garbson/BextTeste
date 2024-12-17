@@ -36,7 +36,7 @@
 
 <script setup>
 import { useTaskStore } from "@/stores/store.js";
-import Button from "@/components/Button.vue"; // Importa o componente Button
+import Button from "@/components/button.vue"; // 
 import { CheckIcon, TrashIcon, XMarkIcon } from "@heroicons/vue/24/solid";
 const emit = defineEmits(["close", "task-deleted"]);
 

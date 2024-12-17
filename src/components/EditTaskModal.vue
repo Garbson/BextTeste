@@ -123,7 +123,7 @@
 
 <script setup>
 import { useTaskStore } from "@/stores/store.js";
-import Button from "@/components/Button.vue"; // Botão reutilizável
+import Button from "@/components/button.vue"; 
 import { ref, watch } from "vue";
 
 // Importação dos Heroicons

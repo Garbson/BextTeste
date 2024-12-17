@@ -114,7 +114,7 @@
 <script setup>
 import { useTaskStore } from "@/stores/store.js";
 import { ref } from "vue";
-import Button from "@/components/Button.vue";
+import Button from "@/components/button.vue";
 
 // Importação dos Heroicons
 import {
