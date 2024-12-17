@@ -1,0 +1,103 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "1234"
+    },
+    {
+      "id": 2,
+      "username": "user",
+      "password": "abcd"
+    },
+    {
+      "id": "e61b",
+      "username": "garbsonsouza2602@gmail.com",
+      "password": "minhamae"
+    },
+    {
+      "id": "0e7e",
+      "username": "garbson26",
+      "password": "abcd"
+    },
+    {
+      "id": "1bce",
+      "username": "admin26",
+      "password": "1234"
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Exemplo de Tarefa",
+      "description": "Descrição da tarefa",
+      "priority": "Alta",
+      "category": "Trabalho",
+      "dueDate": "2024-12-20",
+      "userId": 1
+    },
+    {
+      "id": "7b56",
+      "title": "testando ",
+      "description": "tarefa teste",
+      "category": "escola",
+      "priority": "Alta",
+      "dueDate": "2024-12-25",
+      "userId": 2
+    },
+    {
+      "id": "5b2b",
+      "title": "testando now ",
+      "description": "sdadasd",
+      "category": "saude",
+      "priority": "Baixa",
+      "dueDate": "2024-12-27",
+      "userId": 1
+    },
+    {
+      "id": "1cb8",
+      "title": "testando now ",
+      "description": "saude",
+      "category": "saude",
+      "priority": "Média",
+      "dueDate": "2024-12-25",
+      "userId": "e61b"
+    },
+    {
+      "id": "7ce9",
+      "title": "teste ",
+      "description": "",
+      "category": "",
+      "priority": "Baixa",
+      "dueDate": "",
+      "userId": "e61b"
+    },
+    {
+      "id": "1048",
+      "title": "teste ",
+      "description": "",
+      "category": "",
+      "priority": "Baixa",
+      "dueDate": "",
+      "userId": "e61b"
+    },
+    {
+      "id": "a1cc",
+      "title": "testando",
+      "description": "sadsadas",
+      "category": "teste",
+      "priority": "Média",
+      "dueDate": "2024-12-19",
+      "userId": 1
+    },
+    {
+      "id": "d443",
+      "title": "garbson",
+      "description": "garbson",
+      "category": "garbson",
+      "priority": "Baixa",
+      "dueDate": "2024-12-28",
+      "userId": 1
+    }
+  ]
+}
